@@ -143,6 +143,8 @@ restartBtn.addEventListener("click", function() {
     // Delete all cards
     cardsContainer.innerHTML = "";
 
+    shuffle(symbols);
+
     // Call `init` to create new cards
     init();
 
