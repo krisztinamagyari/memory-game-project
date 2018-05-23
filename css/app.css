@@ -118,3 +118,84 @@ h1 {
     font-size: 30px;
     color: #581845;
 }
+
+/*
+ * Responsivity settings
+ */
+ @media only screen and (max-width: 700px) {
+       .deck {
+           width: 500px;
+           min-height: 500px;
+           padding: 20px;
+      }
+       .deck .card {
+           height: 100px;
+           width: 100px;
+      }
+       .score-panel {
+           min-width: 450px;
+      }
+  }
+
+   @media only screen and (max-width: 530px) {
+       .deck {
+           width: 420px;
+           min-height: 420px;
+           padding: 15px;
+      }
+       .deck .card {
+           height: 80px;
+           width: 80px;
+      }
+       .score-panel {
+           min-width: 380px;
+      }
+  }
+
+   @media only screen and (max-width: 435px) {
+       .deck {
+           width: 320px;
+           min-height: 320px;
+           padding: 10px;
+      }
+       .deck .card {
+           height: 66px;
+           width: 66px;
+      }
+       .score-panel {
+           min-width: 280px;
+      }
+  }
+
+   @media only screen and (max-width: 375px) {
+       .deck {
+           width: 280px;
+           min-height: 280px;
+           padding: 5px;
+      }
+       .deck .card {
+           height: 60px;
+           width: 60px;
+      }
+
+       .score-panel {
+           max-width: 240px;
+      }
+  }
+
+   @media only screen and (max-width: 340px) {
+       .deck {
+           max-width: 270px;
+           max-height: 270px;
+           padding: 5px;
+      }
+       .deck .card {
+           height: 55px;
+           width: 55px;
+      }
+
+      .score-panel {
+          max-width: 230px;
+     }
+
+  }
