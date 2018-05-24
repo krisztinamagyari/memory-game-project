@@ -8,10 +8,27 @@ const symbols = ["fa fa-diamond", "fa fa-paper-plane-o",
               "fa fa-bicycle", "fa fa-bomb"];
 
 const cardsContainer = document.querySelector(".deck");
+const timerContainer = document.querySelector(".timer");
 
 let openedCards = [];
 let matchedCards = [];
 let shuffledDeck = shuffle(symbols);
+let liveTimer = 0;
+let totalSeconds = 0;
+let isFirstClick = true;
+
+// Set the default value to the timer's container
+timerContainer.innerHTML = totalSeconds;
+
+// The total seconds will be increased by 1 after 1000 ms
+function startTimer() {
+    liveTimer = setInterval(function() {
+    //increase the total secondy by one
+    totalSeconds++;
+    //Update the HTML container with the new time
+    timerContainer.innerHTML = totalSeconds;
+    }, 1000);
+}
 
 
 /*
@@ -41,6 +58,13 @@ function click(card) {
 
     // Card click event
     card.addEventListener("click", function() {
+
+    if(isFirstClick) {
+        // Start the timer
+        startTimer();
+        // Change the first click indicator's value
+        isFirstClick = false;
+    }
 
     const currentCard = this;
     const previousCard = openedCards [0];
@@ -102,6 +126,7 @@ function compare(currentCard, previousCard) {
 function isOver() {
     if(matchedCards.length === symbols.length) {
         alert("Game Over!");
+        stopTimer();
     }
 }
 
@@ -154,6 +179,8 @@ restartBtn.addEventListener("click", function() {
     movesContainer.innerHTML = moves;
     starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li>
     <li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>`;
+    totalSeconds = 0;
+    timerContainer.innerHTML = totalSeconds;
 
 });
 
