@@ -13,11 +13,14 @@ const timerContainer = document.querySelector(".timer");
 let openedCards = [];
 let matchedCards = [];
 let shuffledDeck = shuffle(symbols);
+let stars = 3;
 let liveTimer = 0;
 let totalSeconds = 0;
 let isFirstClick = true;
 
-
+let totalTime = document.getElementById("totalTime");
+let popup = document.getElementById("popup");
+let retry = document.getElementById("retry");
 
 /*
  * Initialize the game
@@ -114,7 +117,7 @@ function compare(currentCard, previousCard) {
 function isOver() {
     if(matchedCards.length === symbols.length) {
         stopTimer();
-        alert("Game Over!");
+        congratsPopup();
     }
 }
 
@@ -136,7 +139,7 @@ function addMove() {
  * Rating system
  */
 const starsContainer = document.querySelector(".stars");
-const star = `<li><i class="fa fa-star"></i></li>`;
+const star = `<i class="fa fa-star"></i>`;
 starsContainer.innerHTML = star + star + star;
 function rating() {
     if(20 < moves) {
@@ -166,6 +169,22 @@ function startTimer() {
 function stopTimer() {
     clearInterval(liveTimer);
 }
+
+function congratsPopup() {
+
+    popup.style.visibility = 'visible'; //popup will display with game details//
+    //display moves taken on the popup//
+    document.getElementById("totalMoves").innerHTML = moves;
+    //display the time taken on the popup//
+    document.getElementById("totalTime").innerHTML = totalSeconds;
+    //display the star rating on the popup//
+    starsNumber = starsContainer.innerHTML
+    document.getElementById("starRating").innerHTML = starsNumber;
+}
+
+retry.addEventListener("click", function() {
+    window.location.reload();
+});
 
 /*
  * Restart button
