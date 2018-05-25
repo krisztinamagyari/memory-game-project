@@ -17,18 +17,6 @@ let liveTimer = 0;
 let totalSeconds = 0;
 let isFirstClick = true;
 
-// Set the default value to the timer's container
-timerContainer.innerHTML = totalSeconds;
-
-// The total seconds will be increased by 1 after 1000 ms
-function startTimer() {
-    liveTimer = setInterval(function() {
-    //increase the total secondy by one
-    totalSeconds++;
-    //Update the HTML container with the new time
-    timerContainer.innerHTML = totalSeconds;
-    }, 1000);
-}
 
 
 /*
@@ -108,7 +96,7 @@ function compare(currentCard, previousCard) {
 
     } else {
 
-        //Wait 500ms, and then do the following
+        //Wait 600ms, and then do the following
         setTimeout(function() {
         currentCard.classList.remove("open", "show", "disable");
         previousCard.classList.remove("open", "show", "disable");
@@ -125,8 +113,8 @@ function compare(currentCard, previousCard) {
  */
 function isOver() {
     if(matchedCards.length === symbols.length) {
-        alert("Game Over!");
         stopTimer();
+        alert("Game Over!");
     }
 }
 
@@ -148,17 +136,36 @@ function addMove() {
  * Rating system
  */
 const starsContainer = document.querySelector(".stars");
-starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li>
-<li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>`;
+const star = `<li><i class="fa fa-star"></i></li>`;
+starsContainer.innerHTML = star + star + star;
 function rating() {
     if(20 < moves) {
-        starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li>`;
+        starsContainer.innerHTML = star;
     } else if(10 < moves && moves <= 20) {
-        starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>`;
+        starsContainer.innerHTML = star + star;
     } else {
-        starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>`;
+        starsContainer.innerHTML = star + star + star;
     }
-};
+}
+
+// Timer
+
+// Set the default value to the timer's container
+timerContainer.innerHTML = totalSeconds;
+
+// The total seconds will be increased by 1 after 1000 ms
+function startTimer() {
+    liveTimer = setInterval(function() {
+    //increase the total secondy by one
+    totalSeconds++;
+    //Update the HTML container with the new time
+    timerContainer.innerHTML = totalSeconds;
+    }, 1000);
+}
+
+function stopTimer() {
+    clearInterval(liveTimer);
+}
 
 /*
  * Restart button
@@ -177,8 +184,9 @@ restartBtn.addEventListener("click", function() {
     matchedCards = [];
     moves = 0;
     movesContainer.innerHTML = moves;
-    starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li>
-    <li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>`;
+    starsContainer.innerHTML = star + star + star;
+    stopTimer();
+    isFirstClick = true;
     totalSeconds = 0;
     timerContainer.innerHTML = totalSeconds;
 
