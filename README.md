@@ -7,11 +7,16 @@
 
 ## Instructions
 
-The starter project has some HTML and CSS styling to display a static version of the Memory Game project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+AIM OF THE GAME
 
-To get started, open `js/app.js` and start building out the app's functionality
+Match the cards as fast as you can: The less moves you make, the better.
 
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
+INSTRUCIONS
+
+Flip any cards by clicking on it. In one move you can flip 2 cards. If they match, they remain turned up.
+If they are not matching cards, try to memorize them, and find their pairs in one of the following moves.
+When you match all cards, a popup window appears, informing you about your results.
+If you click on the button, you can restart the game, and reach even better results.
 
 ## Contributing
 
