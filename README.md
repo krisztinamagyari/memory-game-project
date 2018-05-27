@@ -7,7 +7,7 @@ Match the cards as fast as you can: The less moves you make, the better.
 
 #### How to load the game
 - Download or clone the repository and open the index.html file in your browser.
-- Click on the link for the live version of the game: [Matching Game] (https://krisztinamagyari.github.io/memory-game-project/)
+- Click on the link for the live version of the game: [Matching Game](https://krisztinamagyari.github.io/memory-game-project/)
 
 #### How to play the game
 
@@ -16,9 +16,9 @@ If they are not matching cards, try to memorize them, and find their pairs in on
 When you match all cards, a congratulation window appears, informing you about your results:
 - the number of moves
 - the star rating you have reached
-  :star: :star: :star: : 10 or less moves
-  :star: :star: : 11-20 moves
-  :star: : more than 20 moves
+  - :star: :star: :star: : 10 or less moves
+  - :star: :star: : 11-20 moves
+  - :star: : more than 20 moves
 - the time taken to finish the game
 
 If you click on the **Try again!** button, you can restart the game, and reach even better results.
@@ -27,13 +27,13 @@ In case for any reasons you would like to restart the game, just click on the **
 
 ## Resources used to create the game
 
-**Array shuffle**: http://stackoverflow.com/a/2450976
-**Icons**: https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css
-**Starter code from Udacity**: https://github.com/udacity/fend-project-memory-game
+- **Array shuffle**: http://stackoverflow.com/a/2450976
+- **Icons**: https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css
+- **Starter code from Udacity**: https://github.com/udacity/fend-project-memory-game
 
 ## Licences
 
-The content of this repository is free and is licensed under a [MIT License] (https://choosealicense.com/licenses/mit/).
+The content of this repository is free and is licensed under a [MIT License](https://choosealicense.com/licenses/mit/).
 
 ## Contributing
 
