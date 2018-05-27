@@ -28,10 +28,12 @@ In case for any reasons you would like to restart the game, just click on the **
 #### Screenshots
 
 Screenshot showing cards already matched and opened
-![Cards already matched and opened](\screenshots\matched-and-open-cards.png)
+
+![Cards already matched and opened](screenshots/matched-and-open-cards.png)
 
 Screenshot of finished game with congratulation message
-![Congratulation popup window](\screenshots\winning-screen.png)
+
+![Congratulation popup window](screenshots/winning-screen.png)
 
 ## Resources used to create the game
 
